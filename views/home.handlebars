@@ -1,0 +1,16 @@
+ <div id="container">
+     <form action="/add" method="POST">
+        <div id="conteudo">
+            <input type="text" name="description" id="description" placeholder="Digite aqui..." required>
+            <button id="btn">Add</button>
+        </div>
+        </form>
+         
+        {{#each show}}
+             <div id="caixas">
+                 {{this.description}}
+            </div>
+            {{/each}}
+        
+        </div>
+    </div>

@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: linear-gradient(135deg, #8052ec, #d161ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#container{
+    border: 2px solid white;
+    width: 40%;
+    min-width: 450px;
+    position: absolute;
+    padding: 30px 40px;
+}
+
+#conteudo{
+    background: white;
+    padding: 30px 20px;
+    box-shadow: 0 15px 30px;
+    border-radius: 5px;
+}
+
+#conteudo input{
+    width: 70%;
+    height: 70%;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px;
+    border: 2px solid #d1d3d4;
+    position: relative;
+    border-radius: 5px;
+}
+
+#conteudo input:focus{
+    outline: none;
+    border-color: #8052ec ;
+}
+
+#conteudo button{
+    position: relative;
+    float: right;
+    border: none;
+    background: #8052ec ;
+    padding: 13px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    width:20%;
+    height: 45px;
+    font-weight: 500;
+}
+
+#caixas{
+    background-color: white;
+    margin-top: 60px;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px;
+    position: relative;
+}
+
+.caixas{
+    background-color: white;
+    height: 50px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #d1d3d4;
+    cursor: pointer;
+}
+
+.caixas #funcoes{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.caixas button{
+    border: none;
+    background: #8052ec ;
+    padding: 13px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.completo{
+    text-decoration: line-through;
+}
