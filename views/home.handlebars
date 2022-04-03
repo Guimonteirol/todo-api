@@ -1,16 +1,56 @@
- <div id="container">
-     <form action="/add" method="POST">
-        <div id="conteudo">
-            <input type="text" name="description" id="description" placeholder="Digite aqui..." required>
-            <button id="btn">Add</button>
-        </div>
-        </form>
-         
-        {{#each show}}
-             <div id="caixas">
-                 {{this.description}}
-            </div>
-            {{/each}}
-        
-        </div>
+<div class="container">
+<div id="new-task">
+  <form action="/add" method="POST">
+    <div id="conteudo">
+      <label class="this" for="title">
+        <span> Tarefa</span>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          class="form-control"
+          placeholder="Digite aqui..."
+          required
+        />
+      </label>
+      <label for="title">
+      <span> Descrição </span> 
+        <input
+          type="text"
+          name="description"
+          id="description"
+          class="form-control"
+          placeholder="Digite aqui..."
+          required
+        />
+      </label>
+       <button id="btn">Add</button>
     </div>
+  </form>
+  </div>
+<div id="tasks">
+  {{#each show}}
+    <div>
+
+      <div class="caixas">
+        Tarefa:
+        {{this.title}}
+        Descrição:
+        {{this.description}}
+        <p id="here"></p>
+        <form action="/delete" method="POST">
+          <input type="hidden" name="_id" id="_id" value="{{this._id}}" />
+          <button class="delete" id="btndel">DEL</button>
+        </form>
+        <form action="/edit" method="post">
+          <input type="hidden" name="_id" id="_id" value="{{this._id}}" />
+          <button class="edit" id="btn-edit">EDIT</button>
+        </form>
+      </div>
+
+    </div>
+  {{/each}}
+</div>
+</div>
+
+

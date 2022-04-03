@@ -1,0 +1,19 @@
+<div>
+    <div id="edit-modal">
+        <h5 class="modal-title">Editar Paciente</h5>
+        <form action="/update" method="POST">
+            <div>
+                <input type="hidden" name="_id" id="_id" value="{{todo._id}}" />
+                <label for="nome_edit">Tarefa
+                <input type="text" name="title" id="title" value="{{todo.title}}" class="form-control form-control-sm">
+               </label>
+                <label for="nome_edit">Descrição
+                <input type="text" name="description" id="description" value="{{todo.description}}"
+                    class="form-control form-control-sm">
+                    </label>
+            </div>
+
+            <button type="submit" class="btn btn-dark mt-5">Atualizar</button>
+        </form>
+    </div>
+</div>

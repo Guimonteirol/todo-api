@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+label{
+    display: flex;
+}
+
 body{
     background: linear-gradient(135deg, #8052ec, #d161ff);
     display: flex;
@@ -11,13 +15,16 @@ body{
     height: 100vh;
 }
 
-#container{
+.container {
     border: 2px solid white;
     width: 40%;
-    min-width: 450px;
+    min-width: 420px;
     position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
     padding: 30px 40px;
-}
+  }
 
 #conteudo{
     background: white;
@@ -26,8 +33,32 @@ body{
     border-radius: 5px;
 }
 
-#conteudo input{
-    width: 70%;
+#tasks {
+
+    margin-top: 60px;
+    border-radius: 5px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    width: 100%;
+    position: relative;
+  }
+
+#new-task {
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  }
+
+#conteudo label.this{
+    margin-bottom: 20px;
+}
+
+#conteudo label span{
+    display: flex;
+   align-items:center ;
+    min-width: 75px;
+}
+#conteudo input {
+    width: 900px;
     height: 70%;
     font-size: 15px;
     font-weight: 500;
@@ -43,7 +74,7 @@ body{
 }
 
 #conteudo button{
-    position: relative;
+
     float: right;
     border: none;
     background: #8052ec ;

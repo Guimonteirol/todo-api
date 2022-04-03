@@ -2,11 +2,13 @@ require('dotenv/config');
 require('./db');
 
 const express = require('express');
+const flash = require("connect-flash");
 const exprhbs = require("express-handlebars")
 const routes = require("./routes/todoRouters");
 const port = process.env.PORT || 3000;
 
 const app = express();
+app.use(flash());
 
 app.use(express.urlencoded({extended: true}))
 app.use(express.json());

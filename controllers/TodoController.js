@@ -3,39 +3,37 @@ const Todo = require('../models/TodoModel')
 class ToDoController{
 
     static async addTodo(req, res){
-        const {description} = req.body;
-        const todolist = Todo({description});
+        const {description, title} = req.body;
+        const todolist = Todo({description, title});
         await todolist.save()
         res.status(201).redirect("/")
-
-    
     }
 
     static async showTodo(req,res){
         let query = {}
         const show = await Todo.find(query).lean()
- 
         res.render('home', {show})
     }
 
+    static async editTodo(req, res){
+        const { _id } = req.body;
+        const todo = await Todo.findById(_id).lean();
+        console.log({todo})
+        res.render('edit', {todo})
+    }
+
     static async updateTodo(req, res){
-        const {description} = req.body;
-
-        const search = await Todo.find({_id:_id})
-
-        if(search == null || !search || search == ""){
-            res.status(401).json({message: `parâmetro-${_id}-inexistente`});
-            return
-        }
-
-        await Todo.findByIdAndUpdate(_id, {description});
-        res.status(202).json({message: `registro - ${_id} - atualizado`})
+        const {_id, title, description} = req.body;
+      
+        await Todo.findByIdAndUpdate(_id, {title, description});
+       
+        res.status(201).redirect("/")
     }
 
     static async deleteTodo(req, res){
         const {_id} = req.body;
         await Todo.findByIdAndDelete(_id)
-        res.status(202).json({Todo})
+        res.status(201).redirect("/")
     }
 
 }
