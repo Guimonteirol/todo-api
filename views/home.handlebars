@@ -1,56 +1,86 @@
+<div class="all">
+    <h1 class="logo-title" id="logo" >ToDo List
+     <p>Desenvolvido por Guilherme Monteiro</p></h1>
 <div class="container">
-<div id="new-task">
-  <form action="/add" method="POST">
-    <div id="conteudo">
-      <label class="this" for="title">
-        <span> Tarefa</span>
-        <input
-          type="text"
-          name="title"
-          id="title"
-          class="form-control"
-          placeholder="Digite aqui..."
-          required
-        />
-      </label>
-      <label for="title">
-      <span> Descrição </span> 
-        <input
-          type="text"
-          name="description"
-          id="description"
-          class="form-control"
-          placeholder="Digite aqui..."
-          required
-        />
-      </label>
-       <button id="btn">Add</button>
-    </div>
-  </form>
-  </div>
-<div id="tasks">
-  {{#each show}}
-    <div>
-
-      <div class="caixas">
-        Tarefa:
-        {{this.title}}
-        Descrição:
-        {{this.description}}
-        <p id="here"></p>
-        <form action="/delete" method="POST">
-          <input type="hidden" name="_id" id="_id" value="{{this._id}}" />
-          <button class="delete" id="btndel">DEL</button>
-        </form>
-        <form action="/edit" method="post">
-          <input type="hidden" name="_id" id="_id" value="{{this._id}}" />
-          <button class="edit" id="btn-edit">EDIT</button>
-        </form>
+  <div id="new-task">
+    <form action="/add" method="POST">
+      <div id="conteudo">
+        <label class="this" >
+          <input
+            type="text"
+            name="title"
+            id="title"
+            class="form-control"
+            placeholder="Tarefa"
+            required
+          />
+        </label>
+        <label >
+          <input
+            type="text"
+            name="description"
+            id="description"
+            class="form-control"
+            placeholder="Descrição"
+            required
+          />
+        </label>
+        <label>
+          <div class="input-group mb-3 ">
+            <select name="urgency" class="custom-select form-control" >
+              <option selected>Urgência</option>
+              <option value="Sem prioridade">Sem prioridade</option>
+              <option value="Prioridade">Prioridade</option>
+              <option value="Urgente">Urgente</option>
+            </select>
+          </div>
+        </label>
+        <button id="btn"><i class="bi bi-plus"></i></button>
       </div>
+    </form>
+  </div>
+  </div>
 
-    </div>
-  {{/each}}
+  <div class="container">
+  <div id="tasks">
+    {{#each show}}
+      <div>
+
+        <div class="caixas">
+          <div id="boxtask">
+            <p>
+              Tarefa:
+              {{this.title}}
+            </p>
+            <p>
+              Descrição:
+              {{this.description}}
+            </p>
+             <p>
+              Urgencia:
+              {{this.urgency}}
+            </p>
+          </div>
+
+          <div id="boxbtn">
+            <form action="/delete" method="POST">
+              <input type="hidden" name="_id" id="_id" value="{{this._id}}" />
+              <button class="delete" id="btndel"><i
+                  class="bi bi-trash"
+                ></i></button>
+            </form>
+            <form action="/edit" method="post">
+              <input type="hidden" name="_id" id="_id" value="{{this._id}}" />
+              <button class="edit" id="btn-edit"><i
+                  class="bi bi-pencil"
+                ></i></button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    {{/each}}
+  </div>
 </div>
+
 </div>
-
-

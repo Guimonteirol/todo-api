@@ -3,8 +3,8 @@ const Todo = require('../models/TodoModel')
 class ToDoController{
 
     static async addTodo(req, res){
-        const {description, title} = req.body;
-        const todolist = Todo({description, title});
+        const {description, title, urgency} = req.body;
+        const todolist = Todo({description, title, urgency});
         await todolist.save()
         res.status(201).redirect("/")
     }
@@ -23,9 +23,9 @@ class ToDoController{
     }
 
     static async updateTodo(req, res){
-        const {_id, title, description} = req.body;
+        const {_id, title, description, urgency} = req.body;
       
-        await Todo.findByIdAndUpdate(_id, {title, description});
+        await Todo.findByIdAndUpdate(_id, {title, description, urgency});
        
         res.status(201).redirect("/")
     }

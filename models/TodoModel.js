@@ -10,6 +10,10 @@ const ToDo = model("ToDoList", new Schema({
     type: String,
     required: true,
   },
+  urgency: {
+    type: String,
+    required: true,
+  }
  
 }));
 
