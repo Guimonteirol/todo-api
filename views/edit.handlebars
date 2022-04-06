@@ -1,19 +1,29 @@
-<div>
-    <div id="edit-modal">
-        <h5 class="modal-title">Editar Paciente</h5>
-        <form action="/update" method="POST">
-            <div>
-                <input type="hidden" name="_id" id="_id" value="{{todo._id}}" />
-                <label for="nome_edit">Tarefa
-                <input type="text" name="title" id="title" value="{{todo.title}}" class="form-control form-control-sm">
-               </label>
-                <label for="nome_edit">Descrição
-                <input type="text" name="description" id="description" value="{{todo.description}}"
-                    class="form-control form-control-sm">
-                    </label>
-            </div>
-
-            <button type="submit" class="btn btn-dark mt-5">Atualizar</button>
-        </form>
-    </div>
-</div>
+ <h5 class="modal-title">Editar Paciente</h5>
+<div class="container">
+  <div id="new-task">
+      <form action="/update" method="POST">
+      <div id="conteudo">
+          <input type="hidden" name="_id" id="_id" value="{{todo._id}}" />
+        <label class="this" >
+            <input type="text" name="title" id="title" value="{{todo.title}}" class="form-control form-control-sm">
+        </label>
+        <label >
+           <input type="text" name="description" id="description" value="{{todo.description}}">
+        </label>
+        <label>
+          <div class="input-group mb-3 ">
+            <select name="urgency" class="custom-select " id="inputGroupSelect02">
+              <option value="Sem prioridade" selected>{{todo.urgency}}</option>
+              <option value="Sem prioridade" >Sem prioridade</option>
+              <option value="Prioridade">Prioridade</option>
+              <option value="Urgente">Urgente</option>
+            </select>
+        
+          </div>
+        </label>
+        <button type="submit" class="btn btn-dark">Atualizar</button>
+      </div>
+    </form>
+  </div>
+  </div>
+ 

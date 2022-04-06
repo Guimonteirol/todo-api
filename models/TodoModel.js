@@ -4,13 +4,16 @@ const ToDo = model("ToDoList", new Schema({
   title: {
     type: String,
     required: true,
-    
   },
   description: {
     type: String,
     required: true,
   },
   urgency: {
+    type: String,
+    required: true,
+  },
+  dataFormatada: {
     type: String,
     required: true,
   }

@@ -1,0 +1,40 @@
+<div class="container">
+  <div id="new-task">
+    <form action="/add" method="POST">
+      <div id="conteudo">
+        <label class="this" >
+          <input
+            type="text"
+            name="title"
+            id="title"
+            class="form-control"
+            placeholder="Tarefa"
+            required
+          />
+        </label>
+        <label >
+          <input
+            type="text"
+            name="description"
+            id="description"
+            class="form-control"
+            placeholder="Descrição"
+            required
+          />
+        </label>
+        <label>
+          <div class="input-group mb-3 ">
+            <select name="urgency" class="custom-select " id="inputGroupSelect02">
+              <option value="Sem prioridade" selected>Sem prioridade</option>
+              <option value="Prioridade">Prioridade</option>
+              <option value="Urgente">Urgente</option>
+            </select>
+        
+          </div>
+        </label>
+        <button type="submit" class="btn btn-dark"><i class="bi bi-plus"></i></button>
+      </div>
+    </form>
+  </div>
+  </div>
+ 

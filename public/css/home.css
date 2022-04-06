@@ -5,29 +5,30 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.all{
-    display: flex;
-    align-items: center;
-    height: 100vh;
-}
+
 label{
     display: flex;
 }
 
 body{
-    background: linear-gradient(135deg,  #444444, rgb(189, 188, 188));
-    height: 100h;
-    width: 100%;
+    background: linear-gradient(135deg,  #363636, rgb(129, 129, 129));
+}
+
+body.light-mode {
+	background:linear-gradient(135deg,  #e5e8e8, rgb(255, 255, 255)); ;
+	
 }
 
 h1 {
     font-size: 38px;
-    position: absolute;
     top: 40px;
     right:45%;
-    color: #fff;
-    
+    color: black;
   }
+
+  h1 span {
+  color:  #a9a9a9;
+}
 
   h1 p {
     position: relative;
@@ -40,11 +41,24 @@ h1 {
   }
   
 
+
+
 .container {
-    border: 2px solid white;
-    width: 40%;
-    min-width: 420px;
+    background-color: #222222;
+    border-radius: 5px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
     padding: 30px 40px;
+    margin-top: 100px;
+    min-width: 360px;
+    max-width: 800px;
+  }
+
+  .containerTasks
+  {
+    padding: 30px 40px;
+    margin-top: 100px;
+    margin-left: 35px;
+    margin-top: 70px;
   }
 
 #conteudo{
@@ -52,6 +66,7 @@ h1 {
     padding: 30px 20px;
     box-shadow: 0 15px 30px;
     border-radius: 5px;
+    min-width: 360px;
 }
 
 #tasks {
@@ -86,13 +101,12 @@ h1 {
 
 #conteudo input:focus, select:focus{
     outline: none;
-    border-color: #527bec ;
+    border-color:   #4ca9c9; ;
 }
 
-#conteudo button{
+ button{
     border: none;
-    background: #8052ec ;
-    padding: 13px;
+    padding: 5px;
     border-radius: 5px;
     color: white;
     cursor: pointer;
@@ -113,7 +127,7 @@ h1 {
 
 .caixas button{
     border: none;
-    background: #8052ec ;
+    background-color: #4ca9c9;
     padding: 13px;
     border-radius: 5px;
     color: white;
@@ -147,3 +161,106 @@ select{
     height:40px;
     margin-top: 20px;
 }
+
+.card{
+    margin:10px;
+   
+}
+
+#btn-edit{
+    background-color: #4ca9c9;
+}
+
+#btn-del{
+    background-color: red;
+}
+
+.btn-add{
+    position: absolute;
+    top: 100px;
+    left: 85px;
+}
+
+.btn-add:hover{
+    background-color: #444444;
+    opacity: 1;
+}
+
+#btn-add.bg-dark{
+    
+    color: #4e545c;
+}
+
+
+h6{
+    font-size: 15px;
+}
+
+.card-text{
+    min-height: 50px;
+    margin-top: 10px;
+}
+
+.card-title{
+    display: flex;
+    align-items: center;
+}
+.bg-light{
+    opacity: 0.9;
+}
+.icons a{
+    color: black;
+    margin-right: 10px;
+}
+
+.icons.light-mode a{
+    color: white;
+    margin-right: 10px;
+}
+
+
+.btn-dark{
+    width: 100px;
+    height: 35px;
+}
+
+.custom-select{
+    height: 45px;
+}
+
+.switchMode{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 30px;
+    background-color: black;
+}
+
+.bi-sun-fill{
+    font-size: 2em;
+}
+
+/**/
+h1.light-mode {
+    color: #656565;
+  }
+
+  .card.light-mode {
+    background-color: #fff;
+    color: #000;
+  }
+
+  #tasks.light-mode {
+    background-color: #fff;
+    color: #000;
+  }
+
+  .navbar.light-mode{
+    background: #fff;
+    color: #000;
+  }
+
+  h1.light-mode {
+    color: #656565;
+  }
+/**/

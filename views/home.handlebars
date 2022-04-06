@@ -1,86 +1,29 @@
-<div class="all">
-    <h1 class="logo-title" id="logo" >ToDo List
-     <p>Desenvolvido por Guilherme Monteiro</p></h1>
-<div class="container">
-  <div id="new-task">
-    <form action="/add" method="POST">
-      <div id="conteudo">
-        <label class="this" >
-          <input
-            type="text"
-            name="title"
-            id="title"
-            class="form-control"
-            placeholder="Tarefa"
-            required
-          />
-        </label>
-        <label >
-          <input
-            type="text"
-            name="description"
-            id="description"
-            class="form-control"
-            placeholder="Descrição"
-            required
-          />
-        </label>
-        <label>
-          <div class="input-group mb-3 ">
-            <select name="urgency" class="custom-select form-control" >
-              <option selected>Urgência</option>
-              <option value="Sem prioridade">Sem prioridade</option>
-              <option value="Prioridade">Prioridade</option>
-              <option value="Urgente">Urgente</option>
-            </select>
-          </div>
-        </label>
-        <button id="btn"><i class="bi bi-plus"></i></button>
-      </div>
-    </form>
-  </div>
-  </div>
-
-  <div class="container">
-  <div id="tasks">
-    {{#each show}}
-      <div>
-
-        <div class="caixas">
-          <div id="boxtask">
-            <p>
-              Tarefa:
-              {{this.title}}
-            </p>
-            <p>
-              Descrição:
-              {{this.description}}
-            </p>
-             <p>
-              Urgencia:
-              {{this.urgency}}
-            </p>
-          </div>
-
-          <div id="boxbtn">
-            <form action="/delete" method="POST">
-              <input type="hidden" name="_id" id="_id" value="{{this._id}}" />
-              <button class="delete" id="btndel"><i
-                  class="bi bi-trash"
-                ></i></button>
-            </form>
-            <form action="/edit" method="post">
-              <input type="hidden" name="_id" id="_id" value="{{this._id}}" />
-              <button class="edit" id="btn-edit"><i
-                  class="bi bi-pencil"
-                ></i></button>
-            </form>
+ <a href="/addtasks" class="btn btn-add btn-lg active" id="btn-add" role="button" aria-pressed="true">Adicionar Tarefa +</a>
+<div class="containerTasks">
+ <div class="d-flex flex-wrap">
+      {{#each show}}
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{this.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{this.dataFormatada}}</h6>
+            <p class="card-text">{{this.description}}</p>
+            <div id="boxbtn">
+              <form action="/delete" method="POST">
+                <input type="hidden" name="_id" id="_id" value="{{this._id}}" />
+                <button class="delete" id="btn-del"><i
+                    class="bi bi-trash"
+                  ></i></button>
+              </form>
+              <form action="/edit" method="post">
+                <input type="hidden" name="_id" id="_id" value="{{this._id}}" />
+                <button class="edit" id="btn-edit"><i
+                    class="bi bi-pencil"
+                  ></i></button>
+              </form>
+              <h5 class="card-title">{{this.urgency}}</h5>
+            </div>
           </div>
         </div>
-
-      </div>
-    {{/each}}
+      {{/each}}
+    
   </div>
-</div>
-
-</div>
