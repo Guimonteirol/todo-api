@@ -16,8 +16,15 @@ const ToDo = model("ToDoList", new Schema({
   dataFormatada: {
     type: String,
     required: true,
-  }
- 
+  },
+  priority:{
+    type: Boolean,
+    required: true 
+  },
+  prioritymax:{
+    type: Boolean,
+    required: true 
+  },
 }));
 
 module.exports = ToDo;

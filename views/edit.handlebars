@@ -1,9 +1,10 @@
- <h5 class="modal-title">Editar Paciente</h5>
-<div class="container">
+<div class="container all">
   <div id="new-task">
       <form action="/update" method="POST">
       <div id="conteudo">
+           <h4 class="modal-title mb-4 text-center text-uppercase">EDITAR</h4>
           <input type="hidden" name="_id" id="_id" value="{{todo._id}}" />
+
         <label class="this" >
             <input type="text" name="title" id="title" value="{{todo.title}}" class="form-control form-control-sm">
         </label>
@@ -21,7 +22,7 @@
         
           </div>
         </label>
-        <button type="submit" class="btn btn-dark">Atualizar</button>
+        <button type="submit" class="btn bg-success text-uppercase">ATUALIZAR</button>
       </div>
     </form>
   </div>

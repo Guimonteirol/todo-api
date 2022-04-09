@@ -5,7 +5,7 @@ const express = require('express');
 const flash = require("connect-flash");
 const exprhbs = require("express-handlebars")
 const routes = require("./routes/todoRouters");
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 
 const app = express();
 app.use(flash());

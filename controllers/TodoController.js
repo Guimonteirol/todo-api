@@ -3,6 +3,8 @@ const Todo = require('../models/TodoModel')
 class ToDoController{
 
     static async addTodo(req, res){
+        let priority = false;
+        let prioritymax = false;
         const dataAtual = new Date();
         const dataFormatada = dataAtual.toLocaleDateString(
             'pt-BR',
@@ -13,7 +15,15 @@ class ToDoController{
             }
         )
         const {description, title, urgency} = req.body;
-        const todolist = Todo({description, title, urgency, dataFormatada});
+
+        if( urgency === "Prioridade"){
+            priority = true;
+        }
+        else if( urgency === "Urgente"){
+            prioritymax = true
+        }
+
+        const todolist = Todo({description, title, urgency, dataFormatada, priority,prioritymax});
         await todolist.save()
         res.status(201).redirect("/")
     }
